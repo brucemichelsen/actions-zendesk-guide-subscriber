@@ -13,10 +13,8 @@ jobs:
         run: |
           curl -fsSL -O https://api.github.com/repos/${{ github.actor }}/actions-zendesk-guide-subscriber/actions/workflows/main.yml/runs
           LAST_RUN=$(jq -r '.workflow_runs | map(select(.status == "completed"))[0].created_at' runs)
-          LAST_RUN=${{ secrets.MODIFIED_DATE }}
           LAST_RUN=$(date -d $LAST_RUN +%s)
           echo "::set-output name=last_run_time::$LAST_RUN"
-          echo "::set-output name=last_run_time::$(date +'%Y-%m-%d')"
           
       - id: guide
         name: Pull Guide update
