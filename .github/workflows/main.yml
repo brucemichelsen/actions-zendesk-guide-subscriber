@@ -3,6 +3,7 @@ name: Notify Zendesk Guide Update to Slack
 on:
   schedule:
     - cron:  '*/60 14-23 * * 1-5'
+    # UTC time
 
 jobs:
   zendesk_guide_slack_job:
