@@ -1,8 +1,11 @@
 name: Notify Slack of Zendesk Guide Updates
 
 on:
-  schedule:
-    - cron:  '*/60 14-23 * * 1-5'
+  workflow_dispatch:
+
+#on:
+#  schedule:
+#    - cron:  '*/60 14-23 * * 1-5'
     # UTC time
 
 jobs:
